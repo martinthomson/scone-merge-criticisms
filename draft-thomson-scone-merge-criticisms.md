@@ -115,7 +115,7 @@ SCONE requires that network elements remember an address tuple and client connec
 {:aside}
 > Elements might benefit from recognizing a flow as QUIC and remembering it to manage [this issue](https://github.com/martinthomson/train-protocol/issues/32), that issue might be resolved by a small protocol change instead.
 
-SCONE exposes network elements to weird attacks if they don’t maintain additional state.  They can be sent SCONE packets without an associated QUIC flow, which might cause the network element to spend effort on sending packets to a spoofed source address.  Given spoofed SCONE packets, those generated packets go to a destination of the attacker’s choice.  The time frame over which those packets are likely spread means that this is unlikely to be a significant 
+SCONE exposes network elements to weird attacks if they don’t maintain additional state.  They can be sent SCONE packets without an associated QUIC flow, which might cause the network element to spend effort on sending packets to a spoofed source address.  Given spoofed SCONE packets, those generated packets go to a destination of the attacker’s choice.  The time frame over which those packets are likely spread means that this is unlikely to be a significant amplification in terms of packet rate.  That might make DoS using this vulnerability less appealing, but it is worth noting as it has no upper bound in quantity.
 
 # Miscellaneous SCONE Problems
 
