@@ -78,13 +78,13 @@ SCONE has a 32-bit rate (in kbps) and a window (in ms), which is massively more 
 
 ## Analysis
 
-This is not a serious difference.  TRAIN could change to accommodate a richer signal, but that comes with costs, see below.
+This is not a serious difference.  TRAIN could change to accommodate a richer signal, but that comes with costs, see {{processing}}.
 
-# Network Element Processing
+# Network Element Processing {#processing}
 
-TRAIN requires processing similar to ECN: network elements recognize opportunities and they flip a few bits.  This is designed to be as simple as possible to process, such that it could be done easily at line rate. This is a strong reason to limit the expressiveness of the signal: a more complex signal would be harder to apply.
+TRAIN requires processing similar to ECN: network elements recognize opportunities to send signals when they receive packets for forwarding. Sending a signal involves the flipping of a few bits.  This is designed to require no state and be as simple as possible to process, such that it could be done easily at line rate.  This is a strong reason to limit the expressiveness of the signal: a more complex signal would be harder to apply.
 
-SCONE involves setting up a context at a network element, with the network element sending a signal any time it chooses.  Generating the signal requires the use of an AEAD.  In practice, this is likely a few packets for new flows, then a few any time the flow characteristics at the element change.
+SCONE involves establishing state at a network element, with the network element sending a signal any time it chooses.  Generating the signal requires the use of an AEAD.  In practice, this is likely a few packets for new flows, then a few any time the flow characteristics at the element change.
 
 ## Analysis
 
@@ -93,7 +93,7 @@ SCONE requires that network elements generate new packets, including spoofing th
 SCONE requires that network elements remember an address tuple and client connection ID so that they can provide updates.  TRAIN can be processed without any state.
 
 {:aside}
-> Elements might benefit from recognizing a flow as QUIC and remembering it to manage [this issue](https://github.com/martinthomson/train-protocol/issues/32), that issue might be resolved by a small protocol change instead.
+> Elements might benefit from recognizing a flow as QUIC and remembering it to manage [this issue](https://github.com/martinthomson/train-protocol/issues/32).  However, that issue might be resolved by a modest protocol change instead.
 
 SCONE exposes network elements to weird attacks if they don’t maintain additional state.  They can be sent SCONE packets without an associated QUIC flow, which might cause the network element to spend effort on sending packets to a spoofed source address.  Given spoofed SCONE packets, those generated packets go to a destination of the attacker’s choice.  The time frame over which those packets are likely spread means that this is unlikely to be a significant amplification in terms of packet rate.  That might make DoS using this vulnerability less appealing, but it is worth noting as it has no upper bound in quantity.
 
@@ -103,7 +103,7 @@ There are a few things in SCONE that probably could be improved.  None of these 
 
 ## Packet Protection
 
-SCONE defines packet protection for the packet that a client sends.  Network elements do not need to authenticate this – the information they need from that packet is not protected – but that’s not obvious from the specification.
+SCONE defines packet protection for the packet that a client sends.  Network elements do not need to decrypt or authenticate packets – the information they need from that packet is not protected – but that’s not obvious from the specification.
 
 Protection of signals from network elements provides no meaningful security value.  The value is in resilience to accidentally interpreting garbage packets as a signal and the AEAD is definitely better than the UDP checksum at detecting transmission errors.  However, those same benefits might be realized more cheaply by other means.
 
