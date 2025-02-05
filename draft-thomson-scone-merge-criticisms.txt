@@ -2,14 +2,14 @@
 
 
 
-WG Working Group                                              Y. N. Here
+Standard Communication with Network Elements                  M. Thomson
 Internet-Draft                                                   Mozilla
 Intended status: Informational                           5 February 2025
 Expires: 9 August 2025
 
 
            A comparative analysis of SCONE relative to TRAIN
-                  draft-todo-yourname-protocol-latest
+              draft-thomson-scone-merge-criticisms-latest
 
 Abstract
 
@@ -21,16 +21,18 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-todo-yourname-
-   protocol/.
+   https://martinthomson.github.io/scone-merge-criticisms/draft-thomson-
+   scone-merge-criticisms.html.  Status information for this document
+   may be found at https://datatracker.ietf.org/doc/draft-thomson-scone-
+   merge-criticisms/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   Discussion of this document takes place on the Standard Communication
+   with Network Elements mailing list (mailto:scone@ietf.org), which is
+   archived at https://mailarchive.ietf.org/arch/browse/scone.
+   Subscribe at https://www.ietf.org/mailman/listinfo/scone/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/martinthomson/scone-merge-criticisms.
 
 Status of This Memo
 
@@ -142,17 +144,19 @@ Table of Contents
 3.1.  Analysis
 
    This is not a serious difference.  TRAIN could change to accommodate
-   a richer signal, but that comes with costs, see below.
+   a richer signal, but that comes with costs, see Section 4.
 
 4.  Network Element Processing
 
    TRAIN requires processing similar to ECN: network elements recognize
-   opportunities and they flip a few bits.  This is designed to be as
-   simple as possible to process, such that it could be done easily at
-   line rate.  This is a strong reason to limit the expressiveness of
-   the signal: a more complex signal would be harder to apply.
+   opportunities to send signals when they receive packets for
+   forwarding.  Sending a signal involves the flipping of a few bits.
+   This is designed to require no state and be as simple as possible to
+   process, such that it could be done easily at line rate.  This is a
+   strong reason to limit the expressiveness of the signal: a more
+   complex signal would be harder to apply.
 
-   SCONE involves setting up a context at a network element, with the
+   SCONE involves establishing state at a network element, with the
    network element sending a signal any time it chooses.  Generating the
    signal requires the use of an AEAD.  In practice, this is likely a
    few packets for new flows, then a few any time the flow
@@ -170,9 +174,9 @@ Table of Contents
 
       |  Elements might benefit from recognizing a flow as QUIC and
       |  remembering it to manage this issue
-      |  (https://github.com/martinthomson/train-protocol/issues/32),
-      |  that issue might be resolved by a small protocol change
-      |  instead.
+      |  (https://github.com/martinthomson/train-protocol/issues/32).
+      |  However, that issue might be resolved by a modest protocol
+      |  change instead.
 
    SCONE exposes network elements to weird attacks if they don’t
    maintain additional state.  They can be sent SCONE packets without an
@@ -193,9 +197,9 @@ Table of Contents
 5.1.  Packet Protection
 
    SCONE defines packet protection for the packet that a client sends.
-   Network elements do not need to authenticate this – the information
-   they need from that packet is not protected – but that’s not obvious
-   from the specification.
+   Network elements do not need to decrypt or authenticate packets – the
+   information they need from that packet is not protected – but that’s
+   not obvious from the specification.
 
    Protection of signals from network elements provides no meaningful
    security value.  The value is in resilience to accidentally
@@ -276,6 +280,6 @@ Acknowledgments
 
 Author's Address
 
-   Your Name Here
+   Martin Thomson
    Mozilla
-   Email: your.email@example.com
+   Email: mt@lowentropy.net

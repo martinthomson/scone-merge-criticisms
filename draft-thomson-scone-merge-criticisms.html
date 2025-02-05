@@ -5,7 +5,7 @@
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
 <title>A comparative analysis of SCONE relative to TRAIN</title>
-<meta content="Your Name Here" name="author">
+<meta content="Martin Thomson" name="author">
 <meta content="
        A merge of the rate availability signaling schemes in the SCONE and TRAIN proposals is analysed and found to be infeasible. 
     " name="description">
@@ -13,7 +13,7 @@
 <meta content="next generation" name="keyword">
 <meta content="unicorn" name="keyword">
 <meta content="sparkling distributed ledger" name="keyword">
-<meta content="draft-todo-yourname-protocol-latest" name="ietf.draft">
+<meta content="draft-thomson-scone-merge-criticisms-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.26.0
     Python 3.12.8
@@ -1049,7 +1049,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">February 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Here</td>
+<td class="left">Thomson</td>
 <td class="center">Expires 9 August 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1058,9 +1058,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">WG Working Group</dd>
+<dd class="workgroup">Standard Communication with Network Elements</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-todo-yourname-protocol-latest</dd>
+<dd class="internet-draft">draft-thomson-scone-merge-criticisms-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2025-02-05" class="published">5 February 2025</time>
@@ -1072,7 +1072,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
-      <div class="author-name">Y. N. Here</div>
+      <div class="author-name">M. Thomson</div>
 <div class="org">Mozilla</div>
 </div>
 </dd>
@@ -1089,14 +1089,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://example.com/LATEST">https://example.com/LATEST</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-todo-yourname-protocol/">https://datatracker.ietf.org/doc/draft-todo-yourname-protocol/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+        The latest revision of this draft can be found at <span><a href="https://martinthomson.github.io/scone-merge-criticisms/draft-thomson-scone-merge-criticisms.html">https://martinthomson.github.io/scone-merge-criticisms/draft-thomson-scone-merge-criticisms.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-thomson-scone-merge-criticisms/">https://datatracker.ietf.org/doc/draft-thomson-scone-merge-criticisms/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
-        WG Working Group mailing list (<span><a href="mailto:WG@example.com">mailto:WG@example.com</a></span>),
-        which is archived at <span><a href="https://example.com/WG">https://example.com/WG</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
+        Standard Communication with Network Elements  mailing list (<span><a href="mailto:scone@ietf.org">mailto:scone@ietf.org</a></span>),
+        which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/scone">https://mailarchive.ietf.org/arch/browse/scone</a></span>.
+        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/scone/">https://www.ietf.org/mailman/listinfo/scone/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 <p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/USER/REPO">https://github.com/USER/REPO</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+        <span><a href="https://github.com/martinthomson/scone-merge-criticisms">https://github.com/martinthomson/scone-merge-criticisms</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1250,18 +1251,18 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-analysis-2">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-analysis-2" class="section-name selfRef">Analysis</a>
         </h3>
-<p id="section-3.1-1">This is not a serious difference.  TRAIN could change to accommodate a richer signal, but that comes with costs, see below.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">This is not a serious difference.  TRAIN could change to accommodate a richer signal, but that comes with costs, see <a href="#processing" class="auto internal xref">Section 4</a>.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
-<div id="network-element-processing">
+<div id="processing">
 <section id="section-4">
       <h2 id="name-network-element-processing">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-network-element-processing" class="section-name selfRef">Network Element Processing</a>
       </h2>
-<p id="section-4-1">TRAIN requires processing similar to ECN: network elements recognize opportunities and they flip a few bits.  This is designed to be as simple as possible to process, such that it could be done easily at line rate. This is a strong reason to limit the expressiveness of the signal: a more complex signal would be harder to apply.<a href="#section-4-1" class="pilcrow">¶</a></p>
-<p id="section-4-2">SCONE involves setting up a context at a network element, with the network element sending a signal any time it chooses.  Generating the signal requires the use of an AEAD.  In practice, this is likely a few packets for new flows, then a few any time the flow characteristics at the element change.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<p id="section-4-1">TRAIN requires processing similar to ECN: network elements recognize opportunities to send signals when they receive packets for forwarding. Sending a signal involves the flipping of a few bits.  This is designed to require no state and be as simple as possible to process, such that it could be done easily at line rate.  This is a strong reason to limit the expressiveness of the signal: a more complex signal would be harder to apply.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">SCONE involves establishing state at a network element, with the network element sending a signal any time it chooses.  Generating the signal requires the use of an AEAD.  In practice, this is likely a few packets for new flows, then a few any time the flow characteristics at the element change.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <div id="analysis-2">
 <section id="section-4.1">
         <h3 id="name-analysis-3">
@@ -1270,7 +1271,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-4.1-1">SCONE requires that network elements generate new packets, including spoofing the source IP address.  TRAIN only depends on packet modification.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <p id="section-4.1-2">SCONE requires that network elements remember an address tuple and client connection ID so that they can provide updates.  TRAIN can be processed without any state.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <aside id="section-4.1-3">
-          <p id="section-4.1-3.1">Elements might benefit from recognizing a flow as QUIC and remembering it to manage <a href="https://github.com/martinthomson/train-protocol/issues/32">this issue</a>, that issue might be resolved by a small protocol change instead.<a href="#section-4.1-3.1" class="pilcrow">¶</a></p>
+          <p id="section-4.1-3.1">Elements might benefit from recognizing a flow as QUIC and remembering it to manage <a href="https://github.com/martinthomson/train-protocol/issues/32">this issue</a>.  However, that issue might be resolved by a modest protocol change instead.<a href="#section-4.1-3.1" class="pilcrow">¶</a></p>
 </aside>
 <p id="section-4.1-4">SCONE exposes network elements to weird attacks if they don’t maintain additional state.  They can be sent SCONE packets without an associated QUIC flow, which might cause the network element to spend effort on sending packets to a spoofed source address.  Given spoofed SCONE packets, those generated packets go to a destination of the attacker’s choice.  The time frame over which those packets are likely spread means that this is unlikely to be a significant amplification in terms of packet rate.  That might make DoS using this vulnerability less appealing, but it is worth noting as it has no upper bound in quantity.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
 </section>
@@ -1288,7 +1289,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         <h3 id="name-packet-protection">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-packet-protection" class="section-name selfRef">Packet Protection</a>
         </h3>
-<p id="section-5.1-1">SCONE defines packet protection for the packet that a client sends.  Network elements do not need to authenticate this – the information they need from that packet is not protected – but that’s not obvious from the specification.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-1">SCONE defines packet protection for the packet that a client sends.  Network elements do not need to decrypt or authenticate packets – the information they need from that packet is not protected – but that’s not obvious from the specification.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.1-2">Protection of signals from network elements provides no meaningful security value.  The value is in resilience to accidentally interpreting garbage packets as a signal and the AEAD is definitely better than the UDP checksum at detecting transmission errors.  However, those same benefits might be realized more cheaply by other means.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1368,11 +1369,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
       </h2>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Your Name Here</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">Martin Thomson</span></div>
 <div dir="auto" class="left"><span class="org">Mozilla</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:your.email@example.com" class="email">your.email@example.com</a>
+<a href="mailto:mt@lowentropy.net" class="email">mt@lowentropy.net</a>
 </div>
 </address>
 </section>
