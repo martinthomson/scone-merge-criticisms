@@ -181,6 +181,9 @@ Table of Contents
    SCONE packets, those generated packets go to a destination of the
    attacker’s choice.  The time frame over which those packets are
    likely spread means that this is unlikely to be a significant
+   amplification in terms of packet rate.  That might make DoS using
+   this vulnerability less appealing, but it is worth noting as it has
+   no upper bound in quantity.
 
 5.  Miscellaneous SCONE Problems
 
