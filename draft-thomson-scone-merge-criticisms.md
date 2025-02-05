@@ -135,7 +135,7 @@ It seems like the point of this is to enable the targeting of a first-hop networ
 
 Alternatively, this feature might be used to probe whether a path supports SCONE: if a forward=0 packet makes it to the other end, it might feed that information back.  Two things though:
 
-* This feature on its own probably wouldn’t be enough to justify a server implementation.  
+* This feature on its own probably wouldn’t be enough to justify a server implementation.
 * Network elements aren’t required to drop these packets.
 
 TRAIN gets this capability for free.  An endpoint that receives an unmodified TRAIN packet might infer that the path doesn’t support TRAIN.
@@ -146,7 +146,7 @@ SCONE insists on a random source connection ID from network elements.  To start 
 
 # Security Considerations
 
-Requiring this section is perhaps no longer sensible, when due consideration is given to the topic of security throughout, as is the case with this document. 
+Requiring this section is perhaps no longer sensible, when due consideration is given to the topic of security throughout, as is the case with this document.
 
 # IANA Considerations
 
